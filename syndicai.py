@@ -12,7 +12,6 @@ import pickle
 
 
 args = {
-    "image": "sample_data/out.jpg",
     "perrosygatos": "clasificador",
     "model": "RedCNN_PerrosyGatos.h5",
 }
@@ -32,6 +31,7 @@ class PythonPredictor:
             image = Image.open(payload["image"].file)
         except:
             image = Image.open(payload["image"].file)
+
         orig = image.copy()
         (h, w) = image.shape[:2]
 

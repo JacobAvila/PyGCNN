@@ -1,13 +1,14 @@
 import os, cv2
 import numpy as np
 
+import tensorflow
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from keras.utils import load_img, img_to_array
-from tensorflow.keras.models import load_model
+from tensorflow.keras import models
 
-from utils import url_to_image, b64_to_image, image_to_base64
+#from utils import url_to_image, b64_to_image, image_to_base64
 
-from PIL import image
+from PIL import Image
 
 
 
@@ -23,7 +24,7 @@ class PythonPredictor:
     def __init__(self, config):
         # cargamos el clasificador de imagenes desde el disco
         print("[INFO] cargando el modelo entrenado...")
-        self.model = load_model(args["model"])
+        self.model = models.load_model(args["model"])
 
     def predict(self, payload):
 

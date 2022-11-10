@@ -12,6 +12,7 @@ from PIL import image
 
 
 args = {
+    "image": "sample/cat.10.jpg"
     "perrosygatos": "clasificador",
     "model": "RedCNN_PerrosyGatos.h5",
 }

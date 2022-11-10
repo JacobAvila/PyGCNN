@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from utils import url_to_image, b64_to_image, image_to_base64
 
 from PIL import image
-import pickle 
+
 
 
 args = {

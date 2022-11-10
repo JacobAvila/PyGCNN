@@ -24,11 +24,12 @@ class PythonPredictor:
     def __init__(self, config):
         # cargamos el clasificador de imagenes desde el disco
         print("[INFO] cargando el modelo entrenado...")
-        self.model = models.load_model(args["model"])
+        #self.model = models.load_model(args["model"])
 
     def predict(self, payload):
 
         # Obtenemos la imagen del post
+        """
         try: 
             image = Image.open(payload["image"].file)
         except:
@@ -40,5 +41,6 @@ class PythonPredictor:
         img_tensor = img_to_array(image)
         img_tensor = np.expand_dims(img_tensor, axis=0)
         img_tensor /= 255
+        """
 
-        return self.model.predict(img_tensor)[0][0]
+        return 0 #self.model.predict(img_tensor)[0][0]

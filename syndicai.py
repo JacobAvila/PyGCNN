@@ -24,7 +24,7 @@ class PythonPredictor:
     def __init__(self, config):
         # cargamos el clasificador de imagenes desde el disco
         print("[INFO] cargando el modelo entrenado...")
-        #self.model = models.load_model(args["model"])
+        self.model = models.load_model(args["model"])
 
     def predict(self, payload):
 

@@ -3,7 +3,8 @@ import numpy as np
 
 import tensorflow
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from keras.utils import load_img, img_to_array
+from keras.utils import img_to_array
+from keras.preprocessing import image
 from tensorflow.keras import models
 
 #from utils import url_to_image, b64_to_image, image_to_base64
@@ -31,14 +32,14 @@ class PythonPredictor:
         # Obtenemos la imagen del post
         """
         try: 
-            image = Image.open(payload["image"].file)
+            img = Image.open(payload["image"].file)
         except:
-            image = Image.open(payload["image"].file)
+            img = Image.open(payload["image"].file)
 
-        orig = image.copy()
-        (h, w) = image.shape[:2]
+        orig = img.copy()
+        (h, w) = img.shape[:2]
 
-        img_tensor = img_to_array(image)
+        img_tensor = img_to_array(img)
         img_tensor = np.expand_dims(img_tensor, axis=0)
         img_tensor /= 255
         """

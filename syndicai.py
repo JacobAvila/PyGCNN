@@ -31,7 +31,6 @@ class PythonPredictor:
             img = Image.open(payload["image"].file)
 
         orig = img.copy()
-        (h, w) = img.shape[:2]
 
         img_tensor = image.img_to_array(img)
         img_tensor = img_tensor.resize((64,64))

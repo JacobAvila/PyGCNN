@@ -25,7 +25,6 @@ class PythonPredictor:
     def predict(self, payload):
 
         # Obtenemos la imagen del post
-        """
         try: 
             img = Image.open(payload["image"].file)
         except:
@@ -38,6 +37,6 @@ class PythonPredictor:
         img_tensor = img_tensor.resize((64,64))
         img_tensor = np.expand_dims(img_tensor, axis=0)
         img_tensor /= 255
-        """
+  
 
-        return 0 #self.model.predict(img_tensor)[0][0]
+        return self.model.predict(img_tensor)[0][0]

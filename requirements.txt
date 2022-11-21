@@ -1,6 +1,4 @@
 tensorflow==2.6.2
 keras==2.9.0
 numpy==1.19.5
-pandas==1.1.5
-scikit-learn==0.23.1
 pillow==7.2.0

@@ -3,11 +3,9 @@ import numpy as np
 
 import tensorflow
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from keras.utils import img_to_array
 from keras.preprocessing import image
 from tensorflow.keras import models
 
-#from utils import url_to_image, b64_to_image, image_to_base64
 
 from PIL import Image
 
@@ -39,7 +37,8 @@ class PythonPredictor:
         orig = img.copy()
         (h, w) = img.shape[:2]
 
-        img_tensor = img_to_array(img)
+        img_tensor = image.img_to_array(img)
+        img_tensor = img_tensor.resize((64,64))
         img_tensor = np.expand_dims(img_tensor, axis=0)
         img_tensor /= 255
         """

@@ -35,7 +35,7 @@ class PythonPredictor:
         img_tensor = image.img_to_array(img)
         img_tensor = img_tensor.resize((64,64))
         img_tensor = np.expand_dims(img_tensor, axis=0)
-        img_tensor /= 255
+        img_tensor /= 255.
   
 
         return self.model.predict(img_tensor)[0][0]

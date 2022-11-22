@@ -1,4 +1,5 @@
 import numpy as np
+import json
 
 from keras.preprocessing import image
 from keras import models
@@ -35,5 +36,10 @@ class PythonPredictor:
         print("[SHAPE]", img_tensor.shape)
         img_tensor = img_tensor/255.
   
-
-        return self.model.predict(img_tensor)[0][0]
+        resultado = np.round(self.model.predict(img_tensor)[0][0])
+        valor = "Perro"
+        if resultado == 0:
+            valor == "Gato"
+        
+        res = {"resultado": valor}
+        return res

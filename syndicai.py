@@ -37,6 +37,8 @@ class PythonPredictor:
         img_tensor = img_tensor/255.
   
         resultado = np.round(self.model.predict(img_tensor)[0][0])
+        print("[Resultado]", resultado)
+
         valor = "Perro"
         if resultado == 0:
             valor = "Gato"

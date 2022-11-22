@@ -42,4 +42,5 @@ class PythonPredictor:
             valor == "Gato"
         
         res = {"resultado": valor}
-        return res
+        
+        return json.dumps(res)

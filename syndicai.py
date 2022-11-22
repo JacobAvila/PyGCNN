@@ -36,4 +36,4 @@ class PythonPredictor:
         img_tensor = img_tensor/255.
   
 
-        return 0 #self.model.predict(img_tensor)[0][0]
+        return self.model.predict(img_tensor)[0][0]

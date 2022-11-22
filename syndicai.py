@@ -39,8 +39,8 @@ class PythonPredictor:
         resultado = np.round(self.model.predict(img_tensor)[0][0])
         valor = "Perro"
         if resultado == 0:
-            valor == "Gato"
+            valor = "Gato"
         
         res = {"resultado": valor}
-        
+
         return json.dumps(res)

@@ -36,8 +36,11 @@ class PythonPredictor:
         print("[SHAPE]", img_tensor.shape)
         img_tensor = img_tensor/255.
   
-        resultado = np.round(self.model.predict(img_tensor)[0][0])
+        resultado = self.model.predict(img_tensor)
         print("[Resultado]", resultado)
+        resultado = np.round(resultado[0][0])
+        print("[Resultado redondeado]", resultado)
+        
 
         valor = "Perro"
         if resultado == 0:
